@@ -358,3 +358,40 @@ body[data-theme="profile"] .key-slot img {
 #slot-icon[hidden] { display: none; }
 .slot-caption { font-size: 7px; letter-spacing: .3px; }
 @media(max-width:700px){.key-dock{width:38px;height:48px}.key-dock.is-empty::before{width:29px;height:29px}.key-slot .key-diamond{width:40px;height:40px}.key-slot .key-diamond>img{width:27px}.slot-caption{font-size:6px;letter-spacing:0}}
+
+/* Cuatro rombos: cerradura arriba, proyectos a izquierda, derecha y abajo. */
+.topbar {
+  grid-template-columns: minmax(65px, 1fr) minmax(0, 800px) minmax(65px, 1fr);
+  grid-template-rows: auto 156px;
+  grid-template-areas: 'brand hint .' 'brand keys .';
+}
+.topbar .key-navigation {
+  width: 128px;
+  height: 156px;
+  padding: 16px 16px 44px;
+  grid-template-columns: repeat(3, 32px);
+  grid-template-rows: repeat(3, 32px);
+  align-items: center;
+  justify-items: center;
+}
+#keys-right { display: contents; }
+.key-navigation .slot-wrap { grid-column: 2; grid-row: 1; width: 56px; height: 56px; justify-content: center; }
+.key-navigation .key-dock { width: 56px; height: 56px; }
+.key-dock[data-dock="corneteria"] { grid-column: 1; grid-row: 2; }
+.key-dock[data-dock="calmeh"] { grid-column: 3; grid-row: 2; }
+.key-dock[data-dock="dentalmas"] { grid-column: 2; grid-row: 3; }
+.key-navigation .key-choice { padding: 0; }
+.key-navigation .key-diamond,
+.key-navigation .key-slot,
+.key-navigation .key-slot .key-diamond,
+.key-navigation .key-dock.is-empty::before { width: 40px; height: 40px; border-radius: 4px; }
+.key-navigation .key-diamond > img,
+.key-navigation .key-slot .key-diamond > img { width: 27px; }
+.key-navigation .slot-caption { top: 124px; font-size: 7px; letter-spacing: .3px; }
+@media (max-width: 700px) {
+  .topbar {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 36px auto 156px;
+    grid-template-areas: 'brand .' 'hint hint' 'keys keys';
+  }
+}
