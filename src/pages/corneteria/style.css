@@ -1,0 +1,813 @@
+body[data-theme=corneteria] {
+  --page:#f3efe7;
+  --ink:#531A13;
+  --muted:#816058;
+  --line:#531A1328;
+  --surface:#e5e6f1;
+  color-scheme:light
+}
+body[data-theme=corneteria] .topbar {
+  background:#531A13;
+  color:#fff0da;
+  --muted:#dab4a4;
+  --line:#ffffff25
+}
+body[data-theme=corneteria] .key-slot {
+  background:#34100c;
+  border-color:#a37551
+}
+body[data-theme=corneteria] .key-choice[aria-pressed=true] .key-label {
+  color:#FDA10D
+}
+.corneteria-page {
+  max-width:1600px;
+  margin:auto
+}
+.corn-exhibit-meta {
+  display:flex;
+  justify-content:space-between;
+  margin:18px 48px 23px;
+  font:9px 'Courier New';
+  letter-spacing:1px
+}
+.corn-exhibit-meta a {
+  border-bottom:1px solid #531A1340;
+  padding-bottom:4px
+}
+.corn-hero {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:570px;
+  margin:0 30px
+}
+.corn-title-block {
+  padding:33px 35px 33px 18px;
+  display:flex;
+  flex-direction:column
+}
+.corn-kicker {
+  font:9px 'Courier New';
+  letter-spacing:1.8px
+}
+.corn-title-block h1 {
+  font-size:clamp(65px,7.3vw,112px);
+  line-height:.92;
+  font-weight:800;
+  letter-spacing:-5px;
+  margin:42px 0 40px
+}
+.corn-title-block h1 em {
+  font-family:Georgia,serif;
+  font-weight:400;
+  letter-spacing:-6px
+}
+.corn-hero-bottom {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+  margin-top:auto
+}
+.corn-hero-bottom>img {
+  width:210px
+}
+.corn-hero-bottom>span {
+  font:8px/1.7 'Courier New';
+  letter-spacing:1px
+}
+.corn-product {
+  background:#FDA10D;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:160px 160px 8px 8px;
+  min-height:560px
+}
+.corn-product-code {
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:34px;
+  font:8px 'Courier New';
+  letter-spacing:1px;
+  white-space:nowrap
+}
+.cornito-image {
+  height:390px;
+  width:75%;
+  object-fit:contain;
+  position:relative;
+  z-index:2;
+  transform:rotate(16deg);
+  filter:drop-shadow(18px 25px 12px #7d350749);
+  transition:transform .7s
+}
+.corn-product:hover .cornito-image {
+  transform:rotate(8deg) translateY(-8px)
+}
+.corn-product-word {
+  position:absolute;
+  font:italic 105px Georgia;
+  color:#531A1319;
+  transform:rotate(-90deg);
+  left:-115px;
+  top:235px;
+  letter-spacing:-7px
+}
+.corn-ring {
+  width:320px;
+  height:320px;
+  position:absolute;
+  border:1px solid #531a1330;
+  border-radius:50%;
+  left:50%;
+  top:49%;
+  transform:translate(-50%,-50%)
+}
+.ring-two {
+  width:420px;
+  height:420px
+}
+.corn-seal {
+  position:absolute;
+  right:27px;
+  bottom:95px;
+  z-index:3;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:100px;
+  height:100px;
+  background:#531A13;
+  color:#FDA10D;
+  border-radius:50%;
+  transform:rotate(12deg);
+  font:8px/1.6 'Courier New';
+  letter-spacing:.5px
+}
+.corn-seal strong {
+  font-size:12px;
+  letter-spacing:0
+}
+.corn-seal>span {
+  font-size:22px;
+  line-height:1.2;
+  margin-top:3px
+}
+.corn-product-caption {
+  position:absolute;
+  bottom:25px;
+  font:8px 'Courier New';
+  letter-spacing:.2px
+}
+.corn-marquee {
+  display:flex;
+  gap:40px;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#531A13;
+  color:#FDA10D;
+  margin-top:42px;
+  padding:19px 0;
+  white-space:nowrap
+}
+.corn-marquee>span {
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:3px
+}
+.corn-marquee>b {
+  font-size:24px;
+  font-weight:400
+}
+.corn-concept {
+  display:grid;
+  grid-template-columns:1fr 1.6fr 1.3fr;
+  gap:40px;
+  padding:83px 48px 53px;
+  align-items:start
+}
+.corn-section-number {
+  font:9px 'Courier New';
+  letter-spacing:1px;
+  padding-top:10px
+}
+.corn-concept h2 {
+  font-size:51px;
+  font-weight:700;
+  letter-spacing:-2.5px;
+  line-height:1.02;
+  margin:0
+}
+.corneteria-page h2 em {
+  font-family:Georgia,serif;
+  font-weight:400
+}
+.corn-concept p {
+  font-size:13px;
+  line-height:1.8;
+  margin:6px 0 0;
+  max-width:330px
+}
+.corn-identity {
+  display:grid;
+  grid-template-columns:1fr 1.35fr;
+  margin:0 48px;
+  gap:14px
+}
+.corn-symbol,.corn-logo-lab {
+  min-height:350px;
+  position:relative;
+  border-radius:7px;
+  overflow:hidden;
+  padding:25px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between
+}
+.corn-symbol {
+  background:#e6dfd2;
+  border:1px solid #531A1318
+}
+.corn-module-label,.corn-module-foot {
+  font:8px 'Courier New';
+  letter-spacing:1px;
+  position:relative;
+  z-index:1
+}
+.corn-symbol>img {
+  width:180px;
+  height:190px;
+  object-fit:contain;
+  align-self:center;
+  position:relative
+}
+.symbol-guides {
+  position:absolute;
+  width:230px;
+  height:230px;
+  border:1px solid #531A1320;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  background:linear-gradient(90deg,transparent 49.8%,#531A1320 50%,transparent 50.2%),linear-gradient(transparent 49.8%,#531A1320 50%,transparent 50.2%)
+}
+.symbol-guides:after {
+  content:'';
+  position:absolute;
+  inset:0;
+  border:1px solid #531A1320;
+  border-radius:50%
+}
+.corn-logo-lab {
+  background:#E5E6F1;
+  color:#531A13;
+  transition:background .3s,color .3s
+}
+.logo-lab-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+}
+.logo-switch {
+  display:flex;
+  gap:9px
+}
+.logo-switch button {
+  border:1px solid #531A1350;
+  background:var(--swatch);
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  padding:0
+}
+.logo-switch button[aria-pressed=true] {
+  outline:1px solid currentColor;
+  outline-offset:3px
+}
+.corn-logo-lab>img {
+  width:80%;
+  max-width:440px;
+  margin:35px auto
+}
+.corn-logo-lab[data-variant=dark] {
+  background:#531A13;
+  color:#E5E6F1
+}
+.corn-logo-lab[data-variant=yellow] {
+  background:#FDA10D
+}
+.corn-palette {
+  margin:65px 48px 0
+}
+.palette-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:22px
+}
+.palette-heading h2 {
+  font-size:28px;
+  font-weight:500;
+  letter-spacing:-1px;
+  margin:0
+}
+.palette-heading>span {
+  font:9px 'Courier New';
+  letter-spacing:1px
+}
+.palette-colors {
+  display:grid;
+  grid-template-columns:2fr 2fr 1fr 1fr;
+  overflow:hidden;
+  border-radius:6px
+}
+.color-block {
+  height:165px;
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between
+}
+.color-block>span {
+  font-size:11px
+}
+.color-block>strong {
+  font:13px 'Courier New'
+}
+.corn-applications {
+  margin-top:85px;
+  background:#e6dfd2;
+  padding:55px 48px
+}
+.corn-app-heading {
+  display:grid;
+  grid-template-columns:1fr 1.6fr 1.3fr;
+  gap:40px;
+  align-items:start;
+  margin-bottom:36px
+}
+.corn-app-heading h2 {
+  font-size:44px;
+  letter-spacing:-2px;
+  line-height:1.08;
+  margin:0
+}
+.corn-app-heading p {
+  font-size:12px;
+  line-height:1.8;
+  margin-top:6px
+}
+.application-grid {
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:22px
+}
+.application-grid figure {
+  margin:0
+}
+.image-expand {
+  border:0;
+  padding:0;
+  background:#f1f0f1;
+  width:100%;
+  height:470px;
+  display:block;
+  position:relative;
+  overflow:hidden;
+  border-radius:5px
+}
+.image-expand>img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .6s
+}
+.cart-figure .image-expand>img {
+  object-fit:contain
+}
+.image-expand:hover>img {
+  transform:scale(1.04)
+}
+.expand-image-icon {
+  position:absolute;
+  right:17px;
+  bottom:17px;
+  width:34px;
+  height:34px;
+  background:#f3efe7;
+  border-radius:50%;
+  color:#531A13;
+  display:grid;
+  place-items:center;
+  font-size:21px
+}
+.application-grid figcaption {
+  padding-top:20px;
+  display:flex;
+  flex-direction:column;
+  gap:10px
+}
+.application-grid figcaption>span {
+  font:8px 'Courier New';
+  letter-spacing:1px
+}
+.application-grid figcaption>strong {
+  font-size:15px;
+  font-weight:400
+}
+.corn-end {
+  text-align:center;
+  padding:70px 24px 10px
+}
+.corn-end>img {
+  width:58px;
+  height:58px;
+  object-fit:contain;
+  margin:auto
+}
+.corn-end h2 {
+  font-size:57px;
+  letter-spacing:-2.5px;
+  margin:21px 0 25px
+}
+.corn-end>a {
+  font-size:11px;
+  border-bottom:1px solid #531A1370;
+  padding-bottom:9px
+}
+.corn-end>a>span {
+  margin-left:25px
+}
+@media(max-width:1000px) {
+  .corn-hero {
+    min-height:480px
+  }
+  .corn-title-block h1 {
+    font-size:78px
+  }
+  .corn-product {
+    min-height:480px;
+    border-radius:120px 120px 7px 7px
+  }
+  .cornito-image {
+    height:320px
+  }
+  .corn-hero-bottom {
+    align-items:flex-start;
+    flex-direction:column;
+    gap:15px
+  }
+  .corn-concept,.corn-app-heading {
+    grid-template-columns:1fr 1.5fr;
+    gap:25px
+  }
+  .corn-concept>.corn-section-number,.corn-app-heading>.corn-section-number {
+    grid-column:span 2
+  }
+  .corn-identity {
+    margin:0 30px
+  }
+  .corn-concept,.corn-applications {
+    padding-left:30px;
+    padding-right:30px
+  }
+  .corn-palette {
+    margin-left:30px;
+    margin-right:30px
+  }
+  .image-expand {
+    height:380px
+  }
+  .corn-seal {
+    right:15px;
+    bottom:60px;
+    width:85px;
+    height:85px
+  }
+  .corn-product-caption {
+    font-size:7px
+  }
+  .corn-hero-bottom>img {
+    width:190px
+  }
+}
+@media(max-width:700px) {
+  .corn-exhibit-meta {
+    margin:14px 20px 20px;
+    font-size:7px;
+    letter-spacing:.5px
+  }
+  .corn-hero {
+    grid-template-columns:1fr;
+    margin:0 18px;
+    gap:25px
+  }
+  .corn-title-block {
+    padding:18px 6px 0
+  }
+  .corn-title-block h1 {
+    font-size:77px;
+    margin:30px 0;
+    letter-spacing:-4px
+  }
+  .corn-title-block h1 em {
+    letter-spacing:-4px
+  }
+  .corn-kicker {
+    font-size:8px
+  }
+  .corn-hero-bottom {
+    flex-direction:row;
+    align-items:center;
+    gap:20px
+  }
+  .corn-hero-bottom>img {
+    width:180px
+  }
+  .corn-hero-bottom>span {
+    font-size:7px;
+    letter-spacing:.5px
+  }
+  .corn-product {
+    min-height:460px;
+    border-radius:145px 145px 6px 6px
+  }
+  .cornito-image {
+    height:330px
+  }
+  .corn-seal {
+    bottom:75px;
+    right:24px
+  }
+  .corn-product-caption {
+    font-size:7px
+  }
+  .corn-marquee {
+    margin-top:30px;
+    gap:25px;
+    padding:14px 0
+  }
+  .corn-marquee>span {
+    font-size:12px
+  }
+  .corn-concept {
+    grid-template-columns:1fr;
+    gap:24px;
+    padding:45px 24px 32px
+  }
+  .corn-concept>.corn-section-number {
+    grid-column:auto
+  }
+  .corn-concept h2 {
+    font-size:45px
+  }
+  .corn-concept p {
+    font-size:12px;
+    margin:0
+  }
+  .corn-identity {
+    grid-template-columns:1fr;
+    margin:0 18px
+  }
+  .corn-symbol,.corn-logo-lab {
+    min-height:320px
+  }
+  .corn-palette {
+    margin:38px 18px 0
+  }
+  .palette-heading {
+    align-items:flex-start;
+    gap:15px;
+    flex-direction:column
+  }
+  .palette-heading h2 {
+    font-size:28px
+  }
+  .palette-heading>span {
+    font-size:8px
+  }
+  .palette-colors {
+    grid-template-columns:1fr 1fr
+  }
+  .color-block {
+    height:135px;
+    padding:20px
+  }
+  .corn-applications {
+    margin-top:45px;
+    padding:35px 18px
+  }
+  .corn-app-heading {
+    grid-template-columns:1fr;
+    gap:23px;
+    margin-bottom:26px
+  }
+  .corn-app-heading>.corn-section-number {
+    grid-column:auto
+  }
+  .corn-app-heading h2 {
+    font-size:41px
+  }
+  .corn-app-heading p {
+    margin:0
+  }
+  .application-grid {
+    grid-template-columns:1fr;
+    gap:30px
+  }
+  .image-expand {
+    height:380px
+  }
+  .tote-figure .image-expand {
+    height:420px
+  }
+  .corn-end {
+    padding-top:45px
+  }
+  .corn-end h2 {
+    font-size:39px;
+    letter-spacing:-1.5px
+  }
+  .corn-end>a {
+    font-size:10px
+  }
+}
+body[data-theme=corneteria] .key-slot {
+  background:#FDA10D
+}
+@media(max-width:700px) {
+  .corn-title-block h1 {
+    font-size:clamp(57px,16vw,77px);
+    letter-spacing:-3px
+  }
+  .corn-title-block h1 em {
+    letter-spacing:-3px
+  }
+}
+.corn-return-hint { font-size: 11px; line-height: 1.6; }
+.corneteria-page { padding-top: 24px; }
+.corn-concept { grid-template-columns: 1.6fr 1.3fr; }
+.corn-symbol { justify-content: center; }
+.corn-logo-lab { justify-content: center; }
+.logo-lab-top { justify-content: flex-end; }
+.corn-app-heading { display: flex; justify-content: space-between; align-items: end; }
+.gallery-controls { display: flex; gap: 10px; }
+.gallery-controls button { width: 44px; height: 44px; border: 1px solid #531A1350; border-radius: 50%; background: transparent; color: #531A13; font-size: 22px; }
+.gallery-controls button:hover { background: #FDA10D; }
+.render-gallery { display: flex; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 18px; scrollbar-color: #531A13 #531A1318; }
+.render-gallery figure { margin: 0; flex: 0 0 65%; min-width: 0; scroll-snap-align: start; }
+.render-gallery .image-expand { height: clamp(320px, 40vw, 560px); background: #f3efe7; }
+.render-gallery .image-expand > img { object-fit: contain; }
+.corn-marquee { white-space: normal; text-align: center; padding: 20px 24px; }
+.corn-marquee > span {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(24px, 3.2vw, 46px);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -.6px;
+  line-height: 1.5;
+  text-wrap: balance;
+}
+@media(max-width:700px) {
+  .corn-concept { grid-template-columns: 1fr; }
+  .corn-app-heading { align-items: center; gap: 16px; }
+  .corn-app-heading h2 { font-size: 32px; }
+  .gallery-controls { gap: 6px; }
+  .gallery-controls button { width: 36px; height: 36px; }
+  .render-gallery figure { flex-basis: 90%; }
+}
+
+/* Anchos naturales, sin tarjetas de fondo; dos grupos forman un bucle continuo. */
+.render-gallery {
+  display: block;
+  overflow-x: auto;
+  padding: 0;
+  scroll-snap-type: none;
+  scrollbar-width: none;
+}
+.render-gallery::-webkit-scrollbar { display: none; }
+.gallery-track { display: flex; width: max-content; animation: gallery-drift 65s linear infinite; }
+.gallery-group { display: flex; flex: none; gap: 16px; padding-right: 16px; align-items: center; }
+.render-gallery figure { flex: none; width: auto; margin: 0; }
+.render-gallery .image-expand {
+  width: auto;
+  height: auto;
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+}
+.render-gallery .image-expand > img {
+  width: auto;
+  height: clamp(280px, 36vw, 480px);
+  max-width: none;
+  object-fit: initial;
+}
+.render-gallery .image-expand:hover > img { transform: none; }
+.render-gallery:hover .gallery-track,
+.render-gallery:focus-within .gallery-track { animation-play-state: paused; }
+@keyframes gallery-drift { to { transform: translateX(-50%); } }
+@media(prefers-reduced-motion:reduce) {
+  .gallery-track { animation: none; }
+  .gallery-group[aria-hidden=true] { display: none; }
+}
+.story-hero .corn-title-block { justify-content: center; }
+.story-hero .corn-title-block h1 { font-size: clamp(52px, 5.4vw, 82px); letter-spacing: -3px; line-height: 1; margin: 15px 0 28px; }
+.story-hero .corn-title-block h1 em { letter-spacing: -3px; }
+.story-hero .corn-title-block > p { font-size: 14px; line-height: 1.8; max-width: 410px; margin: 0 0 25px; }
+.story-hero .corn-title-block > h2 { font-size: 21px; line-height: 1.4; font-weight: 500; max-width: 430px; margin: 0; }
+.corn-birth,.corn-brand-story,.corn-family { margin: 80px 48px 0; }
+.story-heading { display: grid; grid-template-columns: 1.4fr 1fr; gap: 55px; align-items: center; margin-bottom: 35px; }
+.story-heading h2 { font-size: clamp(34px, 4vw, 56px); letter-spacing: -2px; line-height: 1.08; margin: 0; }
+.story-heading > p { font-size: 14px; line-height: 1.8; max-width: 400px; margin: 0; }
+.naming-moment { display: flex; flex-direction: column; align-items: center; padding: 40px 20px 48px; background: #FDA10D; border-radius: 120px 120px 6px 6px; }
+.naming-moment > span:first-child { font: italic 24px Georgia, serif; }
+.naming-arrow { font-size: 35px; margin: 14px 0 0; }
+.naming-moment strong { font: italic clamp(88px, 13vw, 180px)/1.1 Georgia, serif; letter-spacing: -6px; }
+.identity-path { display: flex; align-items: center; justify-content: center; gap: 28px; padding: 28px 0; font-size: 14px; }
+.identity-path b { font-weight: 400; font-size: 24px; }
+.corn-brand-story { margin-top: 50px; }
+.discovery-questions { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin: 40px 0; }
+.discovery-questions > div { border-top: 1px solid #531A1330; padding-top: 24px; }
+.discovery-questions h3 { font: italic 31px/1.2 Georgia, serif; margin: 0 0 14px; }
+.discovery-questions p { font-size: 13px; line-height: 1.7; margin: 0; max-width: 350px; }
+.filling-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.filling-grid figure { margin: 0; min-width: 0; background: #E5E6F1; padding: 20px 12px 24px; border-radius: 6px; }
+.filling-grid img { width: 100%; height: 330px; object-fit: contain; mix-blend-mode: multiply; }
+.filling-grid figcaption { text-align: center; margin-top: 16px; }
+.filling-grid h3 { font-size: 16px; font-weight: 500; margin: 0; }
+.filling-grid figcaption p { font-size: 12px; margin: 8px 0 0; }
+.family-principle { font-size: clamp(24px, 3vw, 40px); text-align: center; line-height: 1.3; letter-spacing: -1px; margin: 42px 0 0; }
+.family-principle em { font-family: Georgia, serif; }
+.story-conclusion { font-size: 15px; line-height: 1.8; }
+.corn-project-tools { margin: 55px 48px 0; border-top: 1px solid #531A1330; padding-top: 28px; }
+.corn-project-tools h2 { font-size: 16px; font-weight: 500; margin: 0 0 25px; }
+.project-tools-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+.project-tool { display: flex; align-items: center; gap: 12px; }
+.project-tool > span { width: 36px; height: 36px; flex-shrink: 0; display: grid; place-items: center; }
+.project-tool svg { width: 36px; height: 36px; }
+.project-tool p { font-size: 12px; line-height: 1.5; margin: 0; }
+.project-ps { border: 1.5px solid currentColor; border-radius: 7px; padding: 4px; font-size: 24px; line-height: 1; }
+@media(max-width:700px) {
+  .story-hero .corn-title-block h1 { font-size: 52px; }
+  .story-hero .corn-title-block > p { font-size: 13px; }
+  .story-hero .corn-title-block > h2 { font-size: 19px; }
+  .corn-birth,.corn-brand-story,.corn-family { margin: 45px 22px 0; }
+  .story-heading { grid-template-columns: 1fr; gap: 23px; }
+  .story-heading h2 { font-size: 38px; }
+  .story-heading > p { font-size: 13px; }
+  .naming-moment { border-radius: 70px 70px 5px 5px; padding: 32px 15px; }
+  .naming-moment strong { font-size: 85px; letter-spacing: -4px; }
+  .naming-moment > span:first-child { font-size: 20px; }
+  .identity-path { flex-direction: column; gap: 10px; padding: 25px 0 0; }
+  .identity-path b { transform: rotate(90deg); }
+  .discovery-questions { grid-template-columns: 1fr; gap: 25px; }
+  .discovery-questions h3 { font-size: 29px; }
+  .filling-grid { grid-template-columns: 1fr 1fr; }
+  .filling-grid figure { padding: 12px 8px 20px; }
+  .filling-grid img { height: 250px; }
+  .filling-grid h3 { font-size: 14px; }
+  .corn-project-tools { margin: 40px 22px 0; }
+  .project-tools-row { grid-template-columns: 1fr 1fr; row-gap: 25px; }
+}
+.corn-intro-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  grid-template-rows: 150px minmax(250px, auto) auto;
+  grid-template-areas: 'logo photo' 'description photo' 'tools tools';
+  gap: 12px;
+  margin: 0 48px;
+}
+.corn-intro-logo { grid-area: logo; background: #e6dfd2; border-radius: 6px; display: grid; place-items: center; padding: 30px; }
+.corn-intro-logo img { width: min(380px, 85%); }
+.corn-intro-description { grid-area: description; background: #531A13; color: #f3efe7; border-radius: 6px; padding: 35px; display: flex; flex-direction: column; justify-content: center; }
+.corn-intro-description h1 { font-size: clamp(32px, 3.6vw, 52px); line-height: 1.1; letter-spacing: -1.8px; margin: 0 0 24px; font-weight: 600; }
+.corn-intro-description h1 em { font-family: Georgia, serif; font-weight: 400; color: #FDA10D; }
+.corn-intro-description p { max-width: 440px; font-size: 14px; line-height: 1.7; margin: 0; }
+.corn-intro-photo { grid-area: photo; position: relative; overflow: hidden; border-radius: 6px; background: #FDA10D; min-height: 410px; display: grid; place-items: center; padding: 25px; }
+.corn-intro-photo img { width: 100%; height: 360px; object-fit: contain; transform: rotate(12deg); filter: drop-shadow(14px 18px 12px #531A1325); }
+.corn-intro-tools { grid-area: tools; display: grid; grid-template-columns: repeat(5, 1fr); background: #e6dfd2; border-radius: 6px; }
+.corn-intro-tools .project-tool { padding: 22px 16px; justify-content: center; border-right: 1px solid #531A1318; }
+.corn-intro-tools .project-tool:last-child { border: 0; }
+.filling-grid figure { background: transparent; }
+.filling-grid img { mix-blend-mode: normal; }
+@media(max-width:1000px) {
+  .corn-intro-grid { margin: 0 30px; }
+  .corn-intro-tools .project-tool { flex-direction: column; gap: 10px; text-align: center; }
+}
+@media(max-width:700px) {
+  .corn-intro-grid { margin: 0 18px; grid-template-columns: 1fr; grid-template-rows: auto; grid-template-areas: 'logo' 'description' 'photo' 'tools'; }
+  .corn-intro-logo { min-height: 120px; padding: 25px; }
+  .corn-intro-description { padding: 28px 24px; }
+  .corn-intro-description h1 { font-size: 37px; }
+  .corn-intro-description p { font-size: 13px; }
+  .corn-intro-photo { min-height: 350px; padding: 20px; }
+  .corn-intro-photo img { height: 310px; }
+  .corn-intro-tools .project-tool { padding: 18px 5px; }
+  .corn-intro-tools .project-tool p { font-size: 9px; }
+  .corn-intro-tools .project-tool > span,.corn-intro-tools .project-tool svg { width: 29px; height: 29px; }
+}

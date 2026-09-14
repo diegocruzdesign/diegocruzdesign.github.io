@@ -1,0 +1,43 @@
+@font-face{font-family:CalYoung;src:url('/assets/calmeh/young-serif.woff') format('woff');font-weight:400;font-display:swap}
+@font-face{font-family:CalUncut;src:url('/assets/calmeh/uncut-sans.woff') format('woff');font-weight:400;font-display:swap}
+body[data-theme=calmeh]{--page:#f2eddf;--ink:#303a28;--muted:#657153;--line:#65715335;color-scheme:light}
+body[data-theme=calmeh] .topbar{background:#657153;color:#fff4e2;--muted:#e0e3d8;--line:#ffffff30}
+body[data-theme=calmeh] .key-slot{background:#657153;border-color:#F9C376}
+.cal-page{max-width:1440px;margin:auto;padding:24px 48px 0;font-family:CalUncut,Arial,sans-serif}
+.cal-page h1,.cal-page h2,.cal-page h3{font-family:CalYoung,Georgia,serif;font-weight:400}
+.cal-intro{display:grid;grid-template-columns:1fr 1.1fr;grid-template-rows:190px 275px auto;grid-template-areas:'brand product' 'manifesto product' 'tools tools';gap:12px}
+.cal-brand{grid-area:brand;background:#e7e5d6;display:grid;place-items:center;border-radius:4px;padding:22px}
+.cal-brand img{width:170px;max-height:150px;object-fit:contain}
+.cal-manifesto{grid-area:manifesto;background:#F9C376;padding:30px 35px;border-radius:4px;display:flex;flex-direction:column;justify-content:center}
+.cal-manifesto h1{font-size:clamp(40px,4.5vw,65px);line-height:1.04;margin:0 0 22px;letter-spacing:-2px}
+.cal-manifesto p{font-size:15px;line-height:1.6;max-width:350px;margin:0}
+.cal-product{grid-area:product;overflow:hidden;border-radius:4px;background:#111}
+.cal-product img{width:100%;height:100%;object-fit:cover}
+.cal-tools{grid-area:tools;background:#657153;color:#fff4e2;display:grid;grid-template-columns:repeat(3,1fr);border-radius:4px}
+.cal-tools>div{display:flex;justify-content:center;align-items:center;gap:12px;padding:20px;border-right:1px solid #ffffff25;font-size:12px}
+.cal-tools>div:last-child{border:0}.cal-tools svg{width:32px;height:32px;flex-shrink:0}
+.cal-origin,.cal-symbol-story,.cal-universe,.cal-packaging{margin-top:85px}
+.cal-section-heading{display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:center;margin-bottom:34px}
+.cal-section-heading h2{font-size:clamp(34px,3.5vw,51px);line-height:1.14;letter-spacing:-1.4px;margin:0}
+.cal-section-heading p{font-size:15px;line-height:1.8;max-width:410px;margin:0}
+.cal-name-parts{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;text-align:center;gap:30px;padding:50px 20px;background:#e7e5d6}
+.cal-name-parts h3{font-size:clamp(36px,5vw,72px);margin:0 0 12px;color:#657153}.cal-name-parts p{margin:0;font-size:15px}.cal-name-parts>span{font-size:35px;color:#657153}
+.cal-name-result{background:#657153;text-align:center;padding:40px 20px;color:#fff4e2}.cal-name-result img{width:330px;max-width:75%;margin:auto}.cal-name-result p{font-size:17px;margin:20px 0 0}
+.cal-symbol-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}.cal-image{display:block;border:0;padding:0;background:transparent;overflow:hidden;width:100%}.cal-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.cal-image:hover img{transform:scale(1.025)}
+.cal-symbol-pair>.cal-image{height:480px}.cal-symbol{display:grid;place-items:center;background:#e7e5d6}.cal-symbol img{width:65%;max-width:350px}
+.cal-system-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:14px}.cal-pattern{min-height:340px;background:#F9C376 url('/assets/calmeh/motifs.webp') repeat;background-size:190px}.cal-type{background:#e7e5d6;padding:40px;display:flex;flex-direction:column;justify-content:center}.cal-type-display{font:48px CalYoung,Georgia,serif}.cal-type p{font-size:12px;margin:10px 0 35px}.cal-type p:last-child{margin-bottom:0}.cal-type-sans{font-size:23px}
+.cal-colors{display:grid;grid-template-columns:3fr 2fr 1fr;margin-top:14px}.cal-colors>div{background:var(--color);color:var(--text);padding:24px;min-height:140px;display:flex;flex-direction:column;justify-content:space-between;font-size:13px}
+.cal-packaging-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:14px}.cal-label{background:#F9C376;padding:25px}.cal-label img{height:490px;object-fit:contain}.cal-studio{background:#111}.cal-studio img{height:540px;object-fit:cover}
+.cal-field{margin-top:85px}.cal-field>.cal-image{height:550px}.cal-field>div{display:grid;grid-template-columns:1.3fr 1fr;gap:60px;padding:35px 0;align-items:center}.cal-field h2{font-size:40px;line-height:1.2;margin:0}.cal-field p{font-size:15px;line-height:1.8;max-width:400px;margin:0}
+.cal-closing{border-top:1px solid var(--line);text-align:center;margin-top:30px;padding:45px 10px 0}.cal-closing img{width:70px;margin:auto}.cal-closing p{font:25px CalYoung,Georgia,serif;margin:22px 0 0}
+@media(max-width:900px){.cal-page{padding:22px 28px 0}.cal-intro{grid-template-columns:1fr 1fr}.cal-manifesto{padding:25px}.cal-section-heading{gap:30px}.cal-type{padding:25px}.cal-type-display{font-size:37px}.cal-colors{grid-template-columns:1fr 1fr 1fr}.cal-product img{object-fit:contain}}
+@media(max-width:700px){.cal-page{padding:18px 18px 0}.cal-intro{grid-template-columns:1fr;grid-template-rows:auto;grid-template-areas:'brand' 'manifesto' 'product' 'tools'}.cal-brand{min-height:175px}.cal-manifesto{padding:30px}.cal-manifesto h1{font-size:48px}.cal-product{height:350px}.cal-product img{object-fit:cover}.cal-tools>div{padding:18px 6px;flex-direction:column;gap:9px;text-align:center;font-size:10px}.cal-origin,.cal-symbol-story,.cal-universe,.cal-packaging,.cal-field{margin-top:50px}.cal-section-heading{grid-template-columns:1fr;gap:22px}.cal-section-heading h2{font-size:35px}.cal-section-heading p{font-size:14px}.cal-name-parts{gap:12px;padding:35px 12px}.cal-name-parts h3{font-size:30px}.cal-name-parts p{font-size:12px}.cal-name-parts>span{font-size:22px}.cal-symbol-pair{grid-template-columns:1fr}.cal-symbol-pair>.cal-image{height:360px}.cal-symbol{min-height:290px}.cal-system-grid{grid-template-columns:1fr}.cal-pattern{min-height:290px;background-size:160px}.cal-type{padding:30px}.cal-colors>div{padding:17px 12px;font-size:11px;min-height:120px}.cal-packaging-grid{grid-template-columns:1fr}.cal-label img{height:420px}.cal-studio img{height:360px}.cal-field>.cal-image{height:340px}.cal-field>div{grid-template-columns:1fr;gap:22px}.cal-field h2{font-size:35px}.cal-closing p{font-size:22px}}
+.cal-pattern { background-size: 190px auto; }
+.cal-studio img { object-fit: contain; }
+.cal-field > .cal-image { height: auto; }
+.cal-field > .cal-image img { height: auto; object-fit: contain; }
+.cal-patterns { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: center; }
+.cal-pattern-item { min-width: 0; }
+.cal-pattern-item img { width: 100%; height: auto; display: block; }
+.cal-pattern-item button { display: block; margin: 12px auto 0; padding: 7px 10px; border: 1px solid #65715355; background: transparent; color: inherit; font: 12px CalUncut, sans-serif; border-radius: 3px; }
+.cal-pattern-item button:hover { background: #e7e5d6; }

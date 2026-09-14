@@ -1,0 +1,45 @@
+body[data-theme=dentalmas]{--page:#f5f4f2;--ink:#252528;--muted:#67676b;--line:#25252820;color-scheme:light}
+body[data-theme=dentalmas] .topbar{background:#D61017;color:white;--muted:#ffe1e2;--line:#ffffff30}
+body[data-theme=dentalmas] .key-slot{background:#D61017;border-color:#ffffff70}
+.dental-page{max-width:1440px;margin:auto;padding:24px 48px 0}
+.dental-intro{display:grid;grid-template-columns:1.15fr 1fr;grid-template-areas:'brand hero' 'copy hero' 'tools tools';grid-template-rows:155px 325px auto;gap:12px}
+.dental-brand{grid-area:brand;background:#D61017;border-radius:6px;display:grid;place-items:center;padding:30px}
+.dental-brand img{width:85%;max-width:410px;max-height:100px;object-fit:contain}
+.dental-intro-copy{grid-area:copy;padding:35px;background:#e9e8e5;border-radius:6px;display:flex;flex-direction:column;justify-content:center}
+.dental-intro-copy h1{font-size:clamp(48px,5.4vw,78px);font-weight:600;line-height:.98;letter-spacing:-3px;margin:0 0 25px}
+.dental-intro-copy p{font-size:15px;line-height:1.7;max-width:390px;margin:0;color:#59595c}
+.dental-hero{grid-area:hero;border-radius:6px;overflow:hidden;background:#ded7d0;display:grid;place-items:center}
+.dental-hero img{width:100%;height:492px;object-fit:contain}
+.dental-tools{grid-area:tools;display:grid;grid-template-columns:repeat(3,1fr);background:#252528;color:#eee;border-radius:6px}
+.dental-tools>div{padding:21px;display:flex;align-items:center;justify-content:center;gap:14px;border-right:1px solid #ffffff25;font-size:12px}
+.dental-tools>div:last-child{border:0}.dental-tools svg{width:33px;height:33px}.dental-ps{font-size:23px;border:1px solid currentColor;border-radius:6px;padding:3px;line-height:1}
+.dental-exhibition{margin-top:75px}.dental-section-heading{display:grid;grid-template-columns:1.2fr 1fr;gap:55px;align-items:center;margin-bottom:35px}
+.dental-section-heading h2,.dental-stories h2{font-weight:500;font-size:clamp(32px,3.3vw,48px);letter-spacing:-1.8px;line-height:1.12;margin:0}
+.dental-section-heading p,.dental-stories p{font-size:14px;line-height:1.8;color:#67676b;max-width:410px;margin:0}
+.dental-gallery-toolbar{display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:28px}
+.dental-filters{display:flex;gap:8px;flex-wrap:wrap}.dental-filters button{background:transparent;color:#505055;border:1px solid #25252830;border-radius:25px;padding:10px 18px;font-size:12px}.dental-filters button[aria-pressed=true]{background:#D61017;color:white;border-color:#D61017}.dental-count{font-size:11px;color:#67676b;white-space:nowrap}
+.dental-post-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 22px;align-items:start}.dental-post-grid figure{margin:0;min-width:0}.dental-post-grid figure[hidden]{display:none}.dental-post-grid figcaption{font-size:12px;line-height:1.5;margin-top:13px;color:#59595c}
+.dental-piece{display:block;width:100%;border:0;padding:0;background:transparent;position:relative}.dental-piece>img{width:100%;height:auto;display:block;border-radius:4px}.dental-piece>span{position:absolute;right:12px;bottom:12px;width:29px;height:29px;background:#fff;color:#D61017;border-radius:50%;display:grid;place-items:center;opacity:0;transition:opacity .2s}.dental-piece:hover>span,.dental-piece:focus-visible>span{opacity:1}
+.dental-stories{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center;margin-top:80px;padding:48px;background:#e9e8e5;border-radius:6px}.dental-stories h2{margin-bottom:24px}.dental-story-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.dental-end{text-align:center;padding-top:65px}.dental-end img{width:210px;margin:auto}.dental-end p{font-size:27px;line-height:1.25;letter-spacing:-.7px;margin:25px 0 0}
+@media(max-width:1000px){.dental-page{padding:22px 28px 0}.dental-intro{grid-template-rows:140px 300px auto}.dental-hero img{height:452px}.dental-intro-copy{padding:25px}.dental-stories{gap:30px;padding:30px}.dental-post-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.dental-page{padding:18px 18px 0}.dental-intro{grid-template-columns:1fr;grid-template-areas:'brand' 'copy' 'hero' 'tools';grid-template-rows:auto}.dental-brand{min-height:125px;padding:22px}.dental-intro-copy{padding:30px 25px}.dental-intro-copy h1{font-size:53px}.dental-intro-copy p{font-size:13px}.dental-hero img{height:auto}.dental-tools>div{padding:17px 8px;flex-direction:column;gap:10px;font-size:11px}.dental-exhibition{margin-top:45px}.dental-section-heading{grid-template-columns:1fr;gap:22px}.dental-section-heading h2{font-size:34px}.dental-section-heading p{font-size:13px}.dental-gallery-toolbar{flex-direction:column;align-items:flex-start;gap:14px}.dental-filters{gap:6px}.dental-filters button{padding:9px 12px;font-size:11px}.dental-post-grid{grid-template-columns:1fr;gap:28px}.dental-stories{grid-template-columns:1fr;padding:24px 18px;margin-top:45px;gap:28px}.dental-stories h2{font-size:34px}.dental-story-pair{gap:10px}.dental-end{padding-top:45px}}
+.dental-more-wrap { display: flex; justify-content: center; margin-top: 35px; }
+.dental-more { border: 1px solid #D61017; border-radius: 25px; background: #D61017; color: white; font-size: 14px; padding: 13px 32px; }
+.dental-more:hover { background: #b50d13; }
+.dental-more[hidden] { display: none; }
+.dental-post-grid { gap: 10px; }
+.dental-hero { position: relative; }
+.dental-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+@media(max-width:700px) {
+  .dental-hero { aspect-ratio: 1; }
+  .dental-post-grid { gap: 10px; }
+}
+.dental-post-grid { --columns: 3; display: block; position: relative; }
+.dental-post-grid figure { position: absolute; }
+@media(max-width:1000px) { .dental-post-grid { --columns: 2; } }
+@media(max-width:700px) { .dental-post-grid { --columns: 1; } }
+.dental-hero-mosaic { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 4px; place-items: stretch; background: transparent; }
+.dental-hero-cell { position: relative; overflow: hidden; min-width: 0; min-height: 0; }
+.dental-hero-cell img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.dental-hero-cell { background: #fff; }
