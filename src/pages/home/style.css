@@ -9,10 +9,10 @@ body[data-theme=home] main.enter{animation:none}
 .home-bubble{opacity:0}.has-pointer .home-bubble{opacity:1}
 .home-scene h1{position:absolute;top:calc(var(--header-height,125px) + 22px);left:3vw;right:3vw;margin:0;color:#808080;opacity:0;font:700 clamp(64px,12vw,220px)/.96 Nultien,Arial,sans-serif;letter-spacing:-.025em;white-space:nowrap;pointer-events:none}
 .home-contact{position:relative;z-index:1;padding:65px max(24px,6vw) 75px;background:rgb(244 244 242 / 35%);backdrop-filter:blur(12px)}
-.home-contact h2{font-size:clamp(25px,3.5vw,48px);font-weight:400;letter-spacing:-1px;margin:0 0 20px}.home-contact>p{font-size:14px;color:#555;margin-bottom:35px}.home-contact-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.home-contact-links a{position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;min-height:68px;font-size:clamp(14px,1.65vw,22px);border:1px solid #1113;padding:20px;background:#fff;text-decoration:none}
-.home-contact-links a::before{content:'';position:absolute;inset:0;background:#000;transform:translateX(-101%);transition:transform .38s ease}
-.home-contact-links a span{position:relative;color:#fff;mix-blend-mode:difference}
-.home-contact-links a:hover::before,.home-contact-links a:focus-visible::before{transform:translateX(0)}
+.home-contact h2{font-size:clamp(25px,3.5vw,48px);font-weight:400;letter-spacing:-1px;margin:0 0 20px}.home-contact>p{font-size:14px;color:#555;margin-bottom:35px}.home-contact-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.home-contact-links a,.home-contact-item{position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;min-height:68px;font-size:clamp(14px,1.65vw,22px);border:1px solid #1113;padding:20px;background:#fff;text-decoration:none}
+.home-contact-links a::before,.home-contact-item::before{content:'';position:absolute;inset:0;background:#000;transform:translateX(-101%);transition:transform .38s ease}
+.home-contact-links a span,.home-contact-item span{position:relative;color:#fff;mix-blend-mode:difference}
+.home-contact-links a:hover::before,.home-contact-links a:focus-visible::before,.home-contact-item:hover::before{transform:translateX(0)}
 .home-contact-links a:focus-visible{outline:2px solid #111;outline-offset:4px}
-@media(prefers-reduced-motion:reduce){.home-contact-links a::before{transition:none}}
+@media(prefers-reduced-motion:reduce){.home-contact-links a::before,.home-contact-item::before{transition:none}}
 @media(max-width:700px){.home-scene{--radius:80px}.home-scene h1{left:20px;right:20px;font-size:clamp(48px,12vw,84px);top:calc(var(--header-height,180px) + 22px)}.home-contact-links{grid-template-columns:1fr}.home-contact{padding-top:50px}}
