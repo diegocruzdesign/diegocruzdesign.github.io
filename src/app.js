@@ -1,5 +1,5 @@
 import { pages } from './registry.js';
-import * as home from './pages/home/index.js';
+import * as home from './pages/home/index.js?v=mobile-title-1';
 const main = document.querySelector('main');
 const topbar = document.querySelector('.topbar');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');

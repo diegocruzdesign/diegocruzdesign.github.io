@@ -21,11 +21,23 @@ export function mount(root) {
  let stopped = false, timer, frame, visible = false, x = 0, y = 0, targetX = 0, targetY = 0, lastTime = 0;
  const syncTitle = () => {
   const h = heading.parentElement, css = getComputedStyle(h);
-  maskText.setAttribute('x',h.offsetLeft);
-  maskText.setAttribute('y',h.offsetTop + scene.getBoundingClientRect().top);
+  const mobile = matchMedia('(max-width: 700px)').matches;
+  const x = h.offsetLeft + (mobile ? h.offsetWidth / 2 : 0);
+  const y = h.offsetTop + scene.getBoundingClientRect().top;
+  maskText.setAttribute('x', x);
+  maskText.setAttribute('y', y);
+  maskText.setAttribute('text-anchor', mobile ? 'middle' : 'start');
   maskText.style.font = css.font;
   maskText.style.letterSpacing = css.letterSpacing;
-  maskText.textContent = heading.textContent;
+  const text = heading.textContent;
+  const lines = mobile ? [text.slice(0, 7), text.slice(8)] : [text];
+  maskText.replaceChildren(...lines.map((line, index) => {
+   const span = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+   span.setAttribute('x', x);
+   span.setAttribute('y', y + index * parseFloat(css.lineHeight));
+   span.textContent = line;
+   return span;
+  }));
  };
  const resize = new ResizeObserver(syncTitle); resize.observe(scene); resize.observe(heading.parentElement);
  document.fonts.ready.then(() => { if (!stopped) syncTitle(); });
