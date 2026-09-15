@@ -79,7 +79,11 @@ async function render(id){
   const module=page?await page.load():home;
   if(token!==version)return;
   const previousBar = active ? topbar.getBoundingClientRect() : null;
-  const previousRadius = getComputedStyle(topbar).borderRadius;
+  const navigation = topbar.querySelector('.key-navigation');
+  const previousKeys = navigation.getBoundingClientRect();
+  const barStyle = getComputedStyle(topbar);
+  const previousSurface = { borderRadius: barStyle.borderRadius, backgroundColor: barStyle.backgroundColor, backdropFilter: barStyle.backdropFilter, border: barStyle.border };
+  topbar.style.transition = 'none';
   cleanup?.();active=page?.id||'home';
   document.body.dataset.theme=active;
   document.title=`${page?.label||'No solo creativo'} — Diego Cruz`;
@@ -94,24 +98,48 @@ async function render(id){
   document.documentElement.style.setProperty('--header-height', `${topbar.offsetHeight}px`);
   if (previousBar && !reducedMotion.matches) {
    const nextBar = topbar.getBoundingClientRect();
-   const dx = previousBar.left + previousBar.width / 2 - nextBar.left - nextBar.width / 2;
-   const dy = previousBar.top + previousBar.height / 2 - nextBar.top - nextBar.height / 2;
-   const motion = topbar.animate([
-    { translate: `${dx}px ${dy}px`, scale: `${previousBar.width / nextBar.width} ${previousBar.height / nextBar.height}`, borderRadius: previousRadius },
-    { translate: '0px 0px', scale: '1 1', borderRadius: getComputedStyle(topbar).borderRadius }
-   ], { duration: 650, easing: 'cubic-bezier(.22,1,.36,1)' });
-   // Resizing mid-flight should immediately settle at the responsive destination.
-   const finishMotion = () => motion.cancel();
+   const nextKeys = navigation.getBoundingClientRect();
+   const nextStyle = getComputedStyle(topbar);
+   const nextSurface = { borderRadius: nextStyle.borderRadius, backgroundColor: nextStyle.backgroundColor, backdropFilter: nextStyle.backdropFilter, border: nextStyle.border };
+   // Morph only the surface. Keep the live keys and text free of the wide,
+   // non-uniform scaling that made the return to the home page look abrupt.
+   const surface = document.createElement('div');
+   surface.className = 'navigation-surface';
+   surface.setAttribute('aria-hidden', 'true');
+   Object.assign(surface.style, nextSurface);
+   document.body.append(surface);
+   topbar.classList.add('is-travelling');
+   const geometry = rect => ({ left: `${rect.left}px`, top: `${rect.top}px`, width: `${rect.width}px`, height: `${rect.height}px` });
+   const timing = { duration: 850, easing: 'cubic-bezier(.4,0,.2,1)', fill: 'both' };
+   const motions = [surface.animate([
+    { ...geometry(previousBar), ...previousSurface },
+    { ...geometry(nextBar), ...nextSurface }
+   ], timing)];
+   const dx = previousKeys.left + previousKeys.width / 2 - nextKeys.left - nextKeys.width / 2;
+   const dy = previousKeys.top + previousKeys.height / 2 - nextKeys.top - nextKeys.height / 2;
+   motions.push(navigation.animate([
+    { translate: `${dx}px ${dy}px`, scale: `${previousKeys.width / nextKeys.width}` },
+    { translate: '0px 0px', scale: '1' }
+   ], timing));
+   for (const hint of topbar.querySelectorAll('.navigation-hint, .home-hint, .wordmark')) {
+    motions.push(hint.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 350, delay: 450, fill: 'both', easing: 'ease-out' }));
+   }
+   motions.push(main.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 550, easing: 'ease-out' }));
+   const finishMotion = () => motions.forEach(motion => motion.cancel());
    window.addEventListener('resize', finishMotion, { once: true });
-   const respectMotion = () => { if (reducedMotion.matches) motion.cancel(); };
+   const respectMotion = () => { if (reducedMotion.matches) finishMotion(); };
    reducedMotion.addEventListener('change', respectMotion);
-   try { await motion.finished; } catch { /* Cancellation uses the final layout. */ }
+   try { await Promise.all(motions.map(motion => motion.finished)); } catch { /* Cancellation uses the final layout. */ }
    finally {
+    finishMotion();
+    surface.remove();
+    topbar.classList.remove('is-travelling');
     window.removeEventListener('resize', finishMotion);
     reducedMotion.removeEventListener('change', respectMotion);
    }
   }
  }catch{announce('No se pudo abrir la exposición. Inténtalo de nuevo.');}
+ finally { topbar.style.removeProperty('transition'); }
 }
 const viewer = document.querySelector('#viewer');
 let viewerTrigger;
