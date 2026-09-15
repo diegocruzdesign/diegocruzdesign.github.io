@@ -1,12 +1,14 @@
 import { pages } from './registry.js';
 import * as home from './pages/home/index.js';
 const main = document.querySelector('main');
+const topbar = document.querySelector('.topbar');
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const slot = document.querySelector('#key-slot');
 const slotIcon = document.querySelector('#slot-icon');
 const keys = new Map();
 let cleanup, active, version = 0, navigating = false;
 const announce = text => { document.querySelector('#announcer').textContent = text; };
-const headerResize = new ResizeObserver(() => document.documentElement.style.setProperty('--header-height', `${document.querySelector('.topbar').getBoundingClientRect().height}px`));
+const headerResize = new ResizeObserver(() => document.documentElement.style.setProperty('--header-height', `${topbar.offsetHeight}px`));
 headerResize.observe(document.querySelector('.topbar'));
 function synchronizeKeys(id) {
  for (const [keyId,{button,dock}] of keys) {
@@ -66,8 +68,7 @@ pages.forEach(page => {
 async function navigate(id){
  if(navigating) return;
  navigating=true;
- await render(id);
- navigating=false;
+ try { await render(id); } finally { navigating=false; }
  if(id!=='home'){slot.classList.remove('key-inserted');void slot.offsetWidth;slot.classList.add('key-inserted');}
 }
 async function render(id){
@@ -77,6 +78,8 @@ async function render(id){
  try {
   const module=page?await page.load():home;
   if(token!==version)return;
+  const previousBar = active ? topbar.getBoundingClientRect() : null;
+  const previousRadius = getComputedStyle(topbar).borderRadius;
   cleanup?.();active=page?.id||'home';
   document.body.dataset.theme=active;
   document.title=`${page?.label||'No solo creativo'} — Diego Cruz`;
@@ -86,6 +89,28 @@ async function render(id){
   announce(page?`Exposición ${page.label} abierta`:'Inicio');
   window.scrollTo({top:0,behavior:'instant'});
   main.classList.remove('enter');void main.offsetWidth;main.classList.add('enter');
+  // Update the home layout before measuring its destination, including a return
+  // from a scrolled project. The same live header keeps all key interactions.
+  document.documentElement.style.setProperty('--header-height', `${topbar.offsetHeight}px`);
+  if (previousBar && !reducedMotion.matches) {
+   const nextBar = topbar.getBoundingClientRect();
+   const dx = previousBar.left + previousBar.width / 2 - nextBar.left - nextBar.width / 2;
+   const dy = previousBar.top + previousBar.height / 2 - nextBar.top - nextBar.height / 2;
+   const motion = topbar.animate([
+    { translate: `${dx}px ${dy}px`, scale: `${previousBar.width / nextBar.width} ${previousBar.height / nextBar.height}`, borderRadius: previousRadius },
+    { translate: '0px 0px', scale: '1 1', borderRadius: getComputedStyle(topbar).borderRadius }
+   ], { duration: 650, easing: 'cubic-bezier(.22,1,.36,1)' });
+   // Resizing mid-flight should immediately settle at the responsive destination.
+   const finishMotion = () => motion.cancel();
+   window.addEventListener('resize', finishMotion, { once: true });
+   const respectMotion = () => { if (reducedMotion.matches) motion.cancel(); };
+   reducedMotion.addEventListener('change', respectMotion);
+   try { await motion.finished; } catch { /* Cancellation uses the final layout. */ }
+   finally {
+    window.removeEventListener('resize', finishMotion);
+    reducedMotion.removeEventListener('change', respectMotion);
+   }
+  }
  }catch{announce('No se pudo abrir la exposición. Inténtalo de nuevo.');}
 }
 const viewer = document.querySelector('#viewer');
